@@ -5,6 +5,9 @@ import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './pages/ErrorPage.jsx'
+import StorePage from './pages/StorePage.jsx'
+import CartPage from './pages/CartPage.jsx'
+import AboutPage from './pages/AboutPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -13,11 +16,27 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/',
-        element: <App />
+        path: "/",
+        element: <App />,
+      },
+      {
+        path: "home",
+        element: <App />,
+      },
+      {
+        path: 'about',
+        element: <AboutPage />
+      },
+      {
+        path: 'store',
+        element: <StorePage />,
+      },
+      {
+        path: 'cart',
+        element: <CartPage />
       }
     ],
-  }
+  },
 ])
 
 createRoot(document.getElementById('root')).render(

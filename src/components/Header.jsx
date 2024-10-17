@@ -1,13 +1,23 @@
 import '../components/Header.module.css'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
     <header>
-        <h1>MART-B-FRESH</h1>
+        <h1>
+          <Link to="home" className='headerText'>MART-B-FRESH</Link>
+        </h1>
         <nav>
             <ul>
-                <li><a href='#'>HOME</a></li>
-                <li><a href="#">STORE</a></li>
+                <li>
+                  <Link to="about">ABOUT</Link>
+                </li>
+                <li>
+                  <Link to="store">STORE</Link>
+                </li>
+                <li>
+                  <Link to="cart">CART</Link>
+                </li>
             </ul>
         </nav>
     </header>

@@ -5,10 +5,12 @@ header {
     align-items: center;
 }
 
-h1 {
+h1 a {
     margin: 0;
     padding: 2rem;
     color: #f7f1d2;
+    cursor: pointer;
+    font-size: 2rem;
 }
 
 nav {
@@ -31,6 +33,6 @@ a {
     font-size: 1.5rem;
 }
 
-a:hover {
+h1:hover, a:hover {
     color: lightgray;
 }
