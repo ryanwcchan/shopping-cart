@@ -1,0 +1,36 @@
+header {
+    background-color: brown;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    padding: 2rem;
+    color: #f7f1d2;
+}
+
+nav {
+    padding: 2rem;
+}
+
+ul {
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #f7f1d2;
+    font-size: 1.5rem;
+}
+
+a:hover {
+    color: lightgray;
+}
