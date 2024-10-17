@@ -1,22 +1,22 @@
-import '../components/Header.module.css'
+import styles from '../components/Header.module.css'
 import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
-    <header>
-        <h1>
-          <Link to="home" className='headerText'>MART-B-FRESH</Link>
+    <header className={styles.header}>
+        <h1 className={styles.headerText}>
+          <Link to="home">MART-B-FRESH</Link>
         </h1>
-        <nav>
-            <ul>
+        <nav className={styles.headerNav}>
+            <ul className={styles.navList}>
                 <li>
-                  <Link to="about">ABOUT</Link>
+                  <Link to="about" className={styles.link}>ABOUT</Link>
                 </li>
                 <li>
-                  <Link to="store">STORE</Link>
+                  <Link to="store" className={styles.link}>STORE</Link>
                 </li>
                 <li>
-                  <Link to="cart">CART</Link>
+                  <Link to="cart" className={styles.link}>CART</Link>
                 </li>
             </ul>
         </nav>

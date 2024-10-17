@@ -1,38 +1,45 @@
-header {
+.header {
     background-color: brown;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: -1;
 }
 
-h1 a {
+.headerText {
     margin: 0;
     padding: 2rem;
-    color: #f7f1d2;
     cursor: pointer;
     font-size: 2rem;
 }
 
-nav {
+.headerText a {
+    text-decoration: none;
+    color: #f7f1d2;
+}
+
+.headerNav {
     padding: 2rem;
 }
 
-ul {
+.navList {
     margin: 0;
     display: flex;
     gap: 1rem;
 }
 
-li {
+.navList li {
     list-style: none;
 }
 
-a {
+.link {
     text-decoration: none;
     color: #f7f1d2;
     font-size: 1.5rem;
 }
 
-h1:hover, a:hover {
+.headerText a:hover,
+.headerText:hover,
+.link:hover {
     color: lightgray;
 }
