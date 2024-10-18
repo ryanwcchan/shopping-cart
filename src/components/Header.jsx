@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
         <h1 className={styles.headerText}>
-          <Link to="home">MART-B-FRESH</Link>
+          <Link to="home">ESSENTIALS MART</Link>
         </h1>
         <nav className={styles.headerNav}>
             <ul className={styles.navList}>
