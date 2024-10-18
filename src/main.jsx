@@ -8,6 +8,7 @@ import ErrorPage from './pages/ErrorPage.jsx'
 import StorePage from './pages/StorePage.jsx'
 import CartPage from './pages/CartPage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
+import ProductPage from './pages/ProductPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: 'store',
         element: <StorePage />,
+      },
+      {
+        path: 'store/:productId',
+        element: <ProductPage />,
       },
       {
         path: 'cart',

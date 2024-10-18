@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import ProductCard from "../components/ProductCard"
 import style from './StorePage.module.css'
 
 export default function StorePage() {
   const [storeData, setStoreData] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     async function fetchStoreData() {
@@ -30,6 +32,10 @@ export default function StorePage() {
     fetchStoreData()
   }, [])
 
+  function handleProductClick(id) {
+    navigate(`/store/${id}`)
+  }
+
   return (
     <div className={style.productContainer}>
       {storeData.map((product) => [
@@ -39,7 +45,7 @@ export default function StorePage() {
           productName={product.title}
           price={product.price}
           image={product.image}
-          desc={product.description}
+          onClick={() => handleProductClick(product.id)}
         />
       ])}
     </div>

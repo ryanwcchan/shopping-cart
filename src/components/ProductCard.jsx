@@ -1,12 +1,49 @@
+import { useState } from 'react'
 import style from './ProductCard.module.css'
 
-export default function ProductCard({ id, productName, price, image, desc }) {
+export default function ProductCard({ id, productName, price, image, onClick }) {
+  const [quantity, setQuantity] = useState(1)
+
+  function handleAddQuantity() {
+    setQuantity(quantity + 1)
+  }
+
+  function handleSubtractQuantity() {
+    if (quantity > 0) {
+        setQuantity(quantity - 1)
+    }
+  }
+
   return (
-    <div className={style.productCard}>
+    <div className={style.productCard} >
         <div className={style.imgContainer}>
-            <img src={image} className={style.productImage}/>
+            <img 
+                src={image} 
+                alt={productName}
+                className={style.productImage}
+                onClick={onClick}
+            />
         </div>
-        <h1 className={style.productTitle}>{productName}</h1>
+        <div className={style.productInfo}>
+            <h1 onClick={onClick}>{productName}</h1>
+            <p>${price}</p>
+            <div className={style.quantity}>
+                <i 
+                    className="fa-solid fa-minus"
+                    onClick={handleSubtractQuantity}
+                ></i>
+                {quantity}
+                <i 
+                    className="fa-solid fa-plus"
+                    onClick={handleAddQuantity}
+                ></i>
+            </div>
+            <button
+                className={style.addButton}
+            >
+                Add to Cart
+            </button>
+        </div>
     </div>
   )
 }

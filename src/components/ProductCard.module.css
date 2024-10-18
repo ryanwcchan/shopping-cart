@@ -1,22 +1,23 @@
 .productCard {
-    width: 16rem;
-    height: 20rem;
+    width: 18rem;
+    height: 100%;
     display: flex;
     flex-direction: column;
     border-radius: 0.5rem;
-    border: 1px solid #e5e7eb;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 200ms;
-    overflow: hidden; 
+    transition: transform 0.1s ease-in-out;
+    overflow: hidden;
+    background-color: white;
+    /* cursor: pointer; */
 }
 
 .productCard:hover {
-    transform: scale(1.05);
+    box-shadow: 0 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .imgContainer {
     width: 100%;
-    height: 18rem;
+    height: 20rem;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -24,21 +25,63 @@
 }
 
 .productImage {
-    width: 100%;
-    height: auto;
-    object-fit: fill;
-    padding: 1.5rem;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
     overflow: hidden;
+    cursor: pointer;
 }
 
-.productTitle {
+.productInfo {
+    background-color: #f7f1d2;
+    padding: 1.5rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.productInfo h1 {
     margin: 0;
     font-size: 1.2rem;
-    border: 1px solid #e5e7eb;
-    background-color: rgb(237, 237, 237);
-    padding: 1.5rem;
-    height: 3rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.productInfo p {
+    text-align: center;
+    margin: 0;
+}
+
+.quantity {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    font-size: 1.5rem;
+    align-items: center;
+}
+
+.addButton {
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    color: white;
+    background-color: brown;
+    padding: 0.5rem 0 0.5rem 0;
+    font-weight: bold;
+    transition: transform 0.3 ease-in-out;
+}
+
+.addButton:hover {
+    background-color: #8edb00;
+    transform: translate(0, -2px);
+}
+
+.productInfo i {
+    transition: transform .3s ease-out;
+}
+
+.productInfo i:hover {
+    transform: translate(0, -1px);
 }
