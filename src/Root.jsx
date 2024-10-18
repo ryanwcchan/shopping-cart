@@ -6,7 +6,7 @@ export default function Root() {
   return (
     <div>
         <Header />
-        <div>
+        <div className={style.outletContainer}>
             <Outlet />
         </div>
     </div>
