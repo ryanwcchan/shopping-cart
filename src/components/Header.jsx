@@ -1,7 +1,8 @@
 import styles from '../components/Header.module.css'
 import { Link } from 'react-router-dom'
 
-export default function Header() {
+export default function Header({ cartCounter }) {
+
   return (
     <header className={styles.header}>
         <h1 className={styles.headerText}>
@@ -16,7 +17,11 @@ export default function Header() {
                   <Link to="store" className={styles.link}>STORE</Link>
                 </li>
                 <li>
-                  <Link to="cart" className={styles.link}>CART</Link>
+                  <Link to="cart" className={styles.link}>
+                    <i className="fa-solid fa-cart-shopping">
+                      <span className={styles.cartBadge}>{cartCounter}</span>
+                    </i>
+                  </Link>
                 </li>
             </ul>
         </nav>

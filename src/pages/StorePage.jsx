@@ -2,8 +2,11 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import ProductCard from "../components/ProductCard"
 import style from './StorePage.module.css'
+import { useOutletContext } from "react-router-dom"
 
 export default function StorePage() {
+  const { updateCartData } = useOutletContext();
+
   const [storeData, setStoreData] = useState([])
   const navigate = useNavigate()
 
@@ -41,11 +44,12 @@ export default function StorePage() {
       {storeData.map((product) => [
         <ProductCard 
           key={product.id}
-          id={product.id}
+          productId={product.id}
           productName={product.title}
           price={product.price}
           image={product.image}
           onClick={() => handleProductClick(product.id)}
+          updateCartData={updateCartData}
         />
       ])}
     </div>

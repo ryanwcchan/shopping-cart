@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import style from './ProductCard.module.css'
 
-export default function ProductCard({ id, productName, price, image, onClick }) {
+export default function ProductCard({ productId, productName, price, image, onClick, updateCartData }) {
   const [quantity, setQuantity] = useState(1)
 
   function handleAddQuantity() {
@@ -40,6 +40,7 @@ export default function ProductCard({ id, productName, price, image, onClick }) 
             </div>
             <button
                 className={style.addButton}
+                onClick={() => updateCartData({ productId, productName, price, quantity })}
             >
                 Add to Cart
             </button>

@@ -30,6 +30,8 @@
 
 .navList li {
     list-style: none;
+    display: flex;
+    align-items: center;
 }
 
 .link {
@@ -42,4 +44,19 @@
 .headerText:hover,
 .link:hover {
     color: lightgray;
+}
+
+.link i {
+    font-size: 2.5rem;
+}
+
+.cartBadge {
+    position: absolute;
+    font-size: 1rem;
+    background: red;
+    border-radius: 2rem;
+    padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+    vertical-align: top;
+    margin-left: -10px;
+    margin-top: -7px;
 }
