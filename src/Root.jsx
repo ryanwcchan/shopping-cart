@@ -25,7 +25,7 @@ export default function Root() {
           cartCounter={cartCounter}
         />
         <div className={style.outletContainer}>
-            <Outlet context={{ updateCartData }}/>
+            <Outlet context={{ cartData, updateCartData  }}/>
         </div>
     </div>
   )
