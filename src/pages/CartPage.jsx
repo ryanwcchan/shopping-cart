@@ -1,18 +1,22 @@
 import { useOutletContext } from "react-router-dom";
+import CartItem from "../components/CartItem";
+import style from './CartPage.module.css'
 
 export default function CartPage() {
   const { cartData } = useOutletContext();
   
-  console.log(cartData)
+  function deleteItem() {
+    
+  }
 
   return (
-    <div>
+    <div className={style.cartContainer}>
       {cartData.map((item) => {
         return (
-          <div>
-            <p>{item.productName}</p>
-            <p>{item.quantity}</p>
-          </div>
+          <CartItem
+            productName={item.productName}
+            quantity={item.quantity}
+          />
         )
       })}
     </div>
