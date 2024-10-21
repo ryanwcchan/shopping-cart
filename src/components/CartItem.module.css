@@ -5,8 +5,10 @@
     gap: 1rem;
 }
 
-.name {
-    width: 50%;
+.productName {
+    /* width: 70%; */
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .productImg {
@@ -15,4 +17,21 @@
     border-radius: 0.5rem;
     padding: 0.5rem;
     background-color: white;
+}
+
+.quantity {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.qtyDisplay {
+    font-size: 2rem;
+}
+
+.button {
+    user-select: none;
+    font-size: 1.5rem;
 }

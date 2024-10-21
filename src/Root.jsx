@@ -54,9 +54,27 @@ export default function Root() {
   }
 
   function incrementQuantity(productId) {
-    
-    setCartCounter((prevCount) => prevCount + 1)
+    setCartCounter(prevCount => prevCount + 1)
+    setCartData(prevCart => {
+      const index = prevCart.findIndex(item => item.productId === productId)
+      const updatedCart = [...prevCart]
+      updatedCart[index] = {
+        ...prevCart[index], quantity: prevCart[index].quantity + 1
+      }
+      return updatedCart
+    })
+  }
 
+  function decreaseQuantity(productId) {
+    setCartCounter(prevCount => prevCount - 1)
+    setCartData(prevCart => {
+      const index = prevCart.findIndex(item => item.productId === productId)
+      const updatedCart = [...prevCart]
+      updatedCart[index] = {
+        ...prevCart[index], quantity: prevCart[index].quantity - 1
+      }
+      return updatedCart
+    })
   }
 
   return (
@@ -65,7 +83,16 @@ export default function Root() {
           cartCounter={cartCounter}
         />
         <div className={style.outletContainer}>
-            <Outlet context={{ cartData, emptyCart, updateCartData, deleteCartItem }}/>
+            <Outlet 
+              context={{ 
+                cartData, 
+                emptyCart, 
+                updateCartData, 
+                deleteCartItem,
+                incrementQuantity, 
+                decreaseQuantity 
+              }}
+            />
         </div>
     </div>
   )

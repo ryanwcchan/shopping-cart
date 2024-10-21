@@ -1,23 +1,24 @@
 import style from './CartItem.module.css'
 
-export default function CartItem({ productName, productId, quantity, productImg, deleteCartItem }) {
+export default function CartItem({ productName, productId, quantity, productImg, deleteCartItem, incrementQuantity, decreaseQuantity }) {
   return (
     <div className={style.itemContainer}>
       <img className={style.productImg} src={productImg} alt="" />
-      <p className={style.name}>{productName}</p>
-      <p 
+      <p className={style.productName}>{productName}</p>
+      <div 
         className={style.quantity}
       >
         Qty: 
         {quantity === 1 ? (
-          <i className="fa-solid fa-trash" onClick={() => deleteCartItem(productId)}></i>
+          <i className={`${style.button} fa-solid fa-trash`} onClick={() => deleteCartItem(productId)}></i>
         ) : (
-          <i className="fa-solid fa-minus"></i>
+          <i onClick={() => decreaseQuantity(productId)} className={`${style.button} fa-solid fa-minus`}></i>
         )}
           
-            {quantity}
-          <i className="fa-solid fa-plus"></i>
-      </p>
+            <p className={style.qtyDisplay}>{quantity}</p>
+          <i onClick={() => incrementQuantity(productId)} className={`${style.button} fa-solid fa-plus`}></i>
+      </div>
+      <button className={style.deletBtn} onClick={() => deleteCartItem(productId)}>Delete</button>
     </div>
   )
 }

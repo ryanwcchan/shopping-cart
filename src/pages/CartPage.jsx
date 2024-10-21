@@ -3,7 +3,7 @@ import CartItem from "../components/CartItem";
 import style from './CartPage.module.css'
 
 export default function CartPage() {
-  const { cartData, emptyCart, deleteCartItem } = useOutletContext();
+  const { cartData = [], emptyCart, deleteCartItem, incrementQuantity, decreaseQuantity } = useOutletContext();
 
   return (
     <div className={style.cartContainer}>
@@ -17,6 +17,8 @@ export default function CartPage() {
             productName={item.productName}
             quantity={item.quantity}
             deleteCartItem={deleteCartItem}
+            incrementQuantity={incrementQuantity}
+            decreaseQuantity={decreaseQuantity}
           />
         )
       })}
