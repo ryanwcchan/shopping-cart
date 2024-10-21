@@ -7,16 +7,56 @@ export default function Root() {
   const [cartData, setCartData] = useState([])
   const [cartCounter, setCartCounter] = useState(0)
 
+  function emptyCart() {
+    setCartData([])
+    console.log('Emptied cart')
+    setCartCounter(0)
+  }
+
   function updateCartData(product) {
-    if (product.quantity > 0) {
-      setCartData((prevCart) => {
-        const newCart = [...prevCart, product]
-        setCartCounter(cartCounter + product.quantity)
-        console.log('Add to cart', product.productName)
-        console.log(product)
-        return newCart
-      })   
+    console.log(product)
+
+    if (product.quantity < 1) {
+      return
     }
+
+    setCartData((prevData) => {
+      const index = cartData.findIndex(item => item.productId === product.productId)
+    
+      if (index === -1) {
+        return [...prevData, product]
+      }
+
+      const updatedCartData = [...prevData]
+      updatedCartData[index] = {
+        ...prevData[index],
+        quantity: prevData[index].quantity + product.quantity
+      }
+
+      return updatedCartData
+    })
+
+    setCartCounter(prev => prev + product.quantity)
+  }
+
+  function deleteCartItem(productId) {
+    const product = cartData.find(item => item.productId === productId)
+
+    if(product) {
+      setCartData((prevCart) => {
+        const updatedCart = prevCart.filter(item => item.productId !== productId)
+        console.log(updatedCart)
+        return updatedCart
+      })
+    }
+
+    setCartCounter((prevCount) => prevCount - product.quantity)
+  }
+
+  function incrementQuantity(productId) {
+    
+    setCartCounter((prevCount) => prevCount + 1)
+
   }
 
   return (
@@ -25,7 +65,7 @@ export default function Root() {
           cartCounter={cartCounter}
         />
         <div className={style.outletContainer}>
-            <Outlet context={{ cartData, updateCartData  }}/>
+            <Outlet context={{ cartData, emptyCart, updateCartData, deleteCartItem }}/>
         </div>
     </div>
   )

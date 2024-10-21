@@ -3,19 +3,20 @@ import CartItem from "../components/CartItem";
 import style from './CartPage.module.css'
 
 export default function CartPage() {
-  const { cartData } = useOutletContext();
-  
-  function deleteItem() {
-    
-  }
+  const { cartData, emptyCart, deleteCartItem } = useOutletContext();
 
   return (
     <div className={style.cartContainer}>
+      <button onClick={emptyCart}>Empty Cart</button>
       {cartData.map((item) => {
         return (
           <CartItem
+            key={item.productId}
+            productId={item.productId}
+            productImg={item.image}
             productName={item.productName}
             quantity={item.quantity}
+            deleteCartItem={deleteCartItem}
           />
         )
       })}

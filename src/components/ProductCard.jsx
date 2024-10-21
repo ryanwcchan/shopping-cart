@@ -40,7 +40,7 @@ export default function ProductCard({ productId, productName, price, image, onCl
             </div>
             <button
                 className={style.addButton}
-                onClick={() => updateCartData({ productId, productName, price, quantity })}
+                onClick={() => updateCartData({ productId, productName, price, quantity, image })}
             >
                 Add to Cart
             </button>

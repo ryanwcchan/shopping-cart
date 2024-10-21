@@ -1,4 +1,18 @@
 .itemContainer {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
+}
+
+.name {
+    width: 50%;
+}
+
+.productImg {
+    width: 4rem;
+    height: auto;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: white;
 }
