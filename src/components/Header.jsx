@@ -6,7 +6,7 @@ export default function Header({ cartCounter }) {
   return (
     <header className={styles.header}>
         <h1 className={styles.headerText}>
-          <Link to="home">ESSENTIALS MART</Link>
+          <Link to="home">FAKE STORE</Link>
         </h1>
         <nav className={styles.headerNav}>
             <ul className={styles.navList}>
