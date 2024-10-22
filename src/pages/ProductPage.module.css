@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 5rem;
+    margin: 5rem;
 }
 
 .header {
@@ -22,14 +22,13 @@ body {
 
 .container {
     display: flex;
-    justify-content: center;
     width: 100%;
     max-width: 70rem;
 }
 
 .image {
-    width: 18rem;
-    height: auto;
+    width: auto;
+    height: 50vh;
 }
 
 .imgContainer {
@@ -40,28 +39,28 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 4rem;
     background-color: white;
-    width: 50%;
     z-index: 2;
     position: relative;
+    flex: 1;
 }
 
 .infoContainer {
     display: flex;
     flex-direction: column;
-    width: 10rem;
+    /* width: 50vw; */
     padding: 4rem;
     background-color: brown;
     margin-left: -1rem;
     border-radius: 0.5rem;
-    width: 50%;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
     color: #f7f1d2;
+    gap: 2rem;
 }
 
 .price {
     font-weight: bold;
     margin: 0;
-    padding: 1rem 0 1rem 0;
+    /* padding: 1rem 0 1rem 0; */
     font-size: 1.5rem;
 }
 
@@ -102,7 +101,6 @@ body {
 
 .quantityWrapper {
     user-select: none;
-    margin: 0.5rem;
     padding: 1rem 2rem;
     background-color: white;
     border-radius: 0.5rem;
@@ -112,7 +110,7 @@ body {
     align-items: center;
     gap: 2rem;
     align-self: center;
-    margin: 2rem;
+    width: auto;
 }
 
 .quantityWrapper button {
@@ -127,9 +125,5 @@ body {
     .infoContainer {
         margin-left: 0;
         margin-top: -1rem;
-    }
-
-    .wrapper {
-        margin-left: 25%;
     }
 }

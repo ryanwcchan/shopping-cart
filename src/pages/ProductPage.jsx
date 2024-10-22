@@ -36,9 +36,14 @@ export default function ProductPage() {
 
   return (
     <div className={styles.pageContainer}>
-      <div className={styles.wrapper}>
+
+      {/* Outer container */}
+      <div>
         <BackButton />
+
+        {/* Container  */}
         <div className={styles.container}>
+          {/* Div 1 */}
           <div className={styles.imgContainer}>
             <img
               className={styles.image}
@@ -46,6 +51,8 @@ export default function ProductPage() {
               alt={product.title}
             />
           </div>
+
+          {/* Div 2 */}
           <div className={styles.infoContainer}>
             <h1 className={styles.header}>{product.title}</h1>
             <p className={styles.price}>Price: ${product.price}</p>
