@@ -5,4 +5,20 @@
     align-items: center;
     margin: 2rem;
     gap: 1rem;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.cartInfo {
+    padding: 2rem;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.totalPrice {
+    font-weight: bold;
+    font-size: 2rem;
 }
