@@ -1,16 +1,18 @@
 import { useState } from 'react'
 import style from './ProductCard.module.css'
+import QuantityButtons from './QuantityButtons'
+import AddToCartButton from './AddToCartButton'
 
 export default function ProductCard({ productId, productName, price, image, onClick, updateCartData }) {
   const [quantity, setQuantity] = useState(1)
 
   function handleAddQuantity() {
-    setQuantity(quantity + 1)
+    setQuantity(prevQuantity => prevQuantity + 1)
   }
 
   function handleSubtractQuantity() {
     if (quantity > 0) {
-        setQuantity(quantity - 1)
+        setQuantity(prevQuantity => prevQuantity - 1)
     }
   }
 
@@ -27,23 +29,19 @@ export default function ProductCard({ productId, productName, price, image, onCl
         <div className={style.productInfo}>
             <h1 onClick={onClick}>{productName}</h1>
             <p>${price}</p>
-            <div className={style.quantity}>
-                <i 
-                    className="fa-solid fa-minus"
-                    onClick={handleSubtractQuantity}
-                ></i>
-                {quantity}
-                <i 
-                    className="fa-solid fa-plus"
-                    onClick={handleAddQuantity}
-                ></i>
-            </div>
-            <button
-                className={style.addButton}
-                onClick={() => updateCartData({ productId, productName, price, quantity, image })}
-            >
-                Add to Cart
-            </button>
+            <QuantityButtons 
+                quantity={quantity} 
+                add={handleAddQuantity} 
+                sub={handleSubtractQuantity}
+            />
+            <AddToCartButton
+              quantity={quantity}
+              productId={productId}
+              productName={productName}
+              updateCartData={updateCartData}
+              price={price}
+              image={image}
+            />
         </div>
     </div>
   )

@@ -46,6 +46,7 @@ body {
     padding: 4rem;
     background-color: white;
     width: 50%;
+    z-index: 2;
 }
 
 .infoContainer {
@@ -55,7 +56,6 @@ body {
     padding: 4rem;
     background-color: brown;
     margin-left: -1rem;
-    z-index: -1;
     border-radius: 0.5rem;
     width: 50%;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
@@ -100,4 +100,23 @@ body {
 .backBtn:active {
     transform: translateY(1px);
 }
-  
+
+.quantityWrapper {
+    user-select: none;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    color: brown;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    align-self: center;
+    margin: 2rem;
+}
+
+.quantityWrapper button {
+    padding: 0.75rem 1rem;
+}

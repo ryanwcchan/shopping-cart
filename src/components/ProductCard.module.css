@@ -55,20 +55,14 @@
     margin: 0;
 }
 
-.quantity {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    font-size: 1.5rem;
-    align-items: center;
-}
+
 
 .addButton {
     border-radius: 0.5rem;
     font-size: 1.2rem;
     color: white;
     background-color: brown;
-    border-color: none;
+    border: none;
     padding: 0.5rem 0 0.5rem 0;
     font-weight: bold;
     /* transition: transform 0.3 ease-in-out; */
@@ -81,17 +75,5 @@
 
 .addButton:active {
     transform: translateY(2px);
-}
-
-.productInfo i {
-    /* transition: transform .3s ease-out; */
-}
-
-.productInfo i:hover {
-    transform: translate(0, -1px);
-}
-
-.productInfo i:active {
-    transform: translate(0, 0px);
 }
 
