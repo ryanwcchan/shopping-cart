@@ -25,7 +25,8 @@
 .navList {
     margin: 0;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
+    margin-right: 1.5rem;
 }
 
 .navList li {
@@ -38,6 +39,7 @@
     text-decoration: none;
     color: #f7f1d2;
     font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .headerText a:hover,

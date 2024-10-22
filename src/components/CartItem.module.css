@@ -6,6 +6,9 @@
     background-color: brown;
     border-radius: 0.5rem;
     padding: 1rem 1.5rem;
+    width: 100%;
+    max-width: 100rem;
+    box-sizing: border-box;
 }
 
 .productName {
@@ -58,7 +61,7 @@
     margin: 0;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    border-color: white;
+    border: none;
     outline-color: transparent;
     background-color: white;
     color: brown;
@@ -67,7 +70,15 @@
     transition: transform .3s ease-out;
 }
 
-.deleteBtn:hover {
+.deleteBtn:hover, .button:hover {
     transform: translate(0, -1px);
-    box-shadow: 0 0 10px rgb(0, 105, 251)
+}
+
+.deleteBtn:hover {
+    /* box-shadow: 0 0 10px rgb(0, 105, 251) */
+    background-color: lightgray;
+}
+
+.button:active {
+    transform: translate(0, 1px);
 }
