@@ -78,7 +78,7 @@ export default function Root() {
   }
 
   return (
-    <div>
+    <div className={style.body}>
         <Header 
           cartCounter={cartCounter}
         />

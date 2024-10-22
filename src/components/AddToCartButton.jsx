@@ -6,7 +6,7 @@ export default function AddToCartButton({ quantity, productId, productName, pric
       className={addBtn.addButton}
       onClick={() => updateCartData({ productId, productName, price, quantity, image })}
     >
-      Add to Cart
+      Add
     </button>
   )
 }

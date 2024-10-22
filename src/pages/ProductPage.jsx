@@ -35,37 +35,37 @@ export default function ProductPage() {
   }
 
   return (
-    <div className={styles.pageContainer}>   
+    <div className={styles.pageContainer}>
       <div className={styles.wrapper}>
         <BackButton />
         <div className={styles.container}>
-            <div className={styles.imgContainer}>
-              <img
-                className={styles.image}
-                src={product.image}
-                alt={product.title}
+          <div className={styles.imgContainer}>
+            <img
+              className={styles.image}
+              src={product.image}
+              alt={product.title}
+            />
+          </div>
+          <div className={styles.infoContainer}>
+            <h1 className={styles.header}>{product.title}</h1>
+            <p className={styles.price}>Price: ${product.price}</p>
+            <p className={styles.description}>{product.description}</p>
+            <div className={styles.quantityWrapper}>
+              <QuantityButtons
+                quantity={quantity}
+                add={handleAddQuantity}
+                sub={handleSubtractQuantity}
+              />
+              <AddToCartButton
+                quantity={quantity}
+                productId={productId}
+                productName={product.title}
+                updateCartData={updateCartData}
+                price={product.price}
+                image={product.image}
               />
             </div>
-            <div className={styles.infoContainer}>
-              <h1 className={styles.header}>{product.title}</h1>
-              <p className={styles.price}>Price: ${product.price}</p>
-              <p className={styles.description}>{product.description}</p>
-              <div className={styles.quantityWrapper}>
-                <QuantityButtons
-                  quantity={quantity}
-                  add={handleAddQuantity}
-                  sub={handleSubtractQuantity}
-                />
-                <AddToCartButton
-                  quantity={quantity}
-                  productId={productId}
-                  productName={product.title}
-                  updateCartData={updateCartData}
-                  price={product.price}
-                  image={product.image}
-                />
-              </div>
-            </div>
+          </div>
         </div>
       </div>
     </div>
