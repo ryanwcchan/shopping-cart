@@ -3,9 +3,17 @@ import style from './AboutPage.module.css'
 export default function AboutPage() {
   return (
     <div className={style.container}>
-      <h1>About Page</h1>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam quasi molestias non voluptatibus recusandae, molestiae aliquid ducimus repellendus doloribus voluptas praesentium reiciendis expedita soluta voluptates quaerat eaque sequi cumque ut!
-      Repellat sapiente eum quaerat, fuga dolorum totam nam tempore cumque laudantium deserunt voluptas nihil consequuntur, autem modi commodi quibusdam sunt odit error reiciendis, amet suscipit mollitia quas blanditiis dolores? Adipisci!</p>
+      <div>
+        <h1 className={style.title}>About</h1>
+        <p className={style.desc}>
+          This project was created to serve as a practical exercise of React Router concepts.
+          
+        </p>
+        <p className={style.desc}>
+          Made by: Ryan Chan
+        </p>
+        <p className={style.desc}><a href="https://github.com/ryanwcchan">My Github</a></p>
+      </div>
     </div>
   )
 }

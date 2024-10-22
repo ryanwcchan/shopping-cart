@@ -72,6 +72,10 @@ body {
 .description {
     margin: 0;
     font-size: 1.2rem;
+    background-color: white;
+    color: brown;
+    border-radius: 0.5rem;
+    padding: 1.2rem;
 }
 
 .backBtn {
@@ -104,15 +108,15 @@ body {
 .quantityWrapper {
     user-select: none;
     margin: 0.5rem;
-    padding: 0.5rem;
+    padding: 1rem 2rem;
     background-color: white;
     border-radius: 0.5rem;
     color: brown;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     gap: 2rem;
-    width: 100%;
+    /* width: 100%; */
     align-self: center;
     margin: 2rem;
 }
