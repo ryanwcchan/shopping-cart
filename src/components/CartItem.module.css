@@ -2,13 +2,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
+    background-color: brown;
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
 }
 
 .productName {
-    /* width: 70%; */
+    width: 70%;
     font-size: 1.5rem;
     font-weight: bold;
+    border-radius: 0.5rem;
+    background-color: white;
+    padding: 1rem 1.5rem;
 }
 
 .productImg {
@@ -24,14 +30,44 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0.7rem 1.5rem;
+}
+
+.qty {
+    font-size: 2rem;
 }
 
 .qtyDisplay {
     font-size: 2rem;
+    border-radius: 0.5rem;
+    background-color: #f7f1d2;
+    padding: 0 1rem 0 1rem;
+    margin: 0;
 }
 
 .button {
     user-select: none;
     font-size: 1.5rem;
+    color: brown;
+}
+
+.deleteBtn {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border-color: white;
+    outline-color: transparent;
+    background-color: white;
+    color: brown;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: transform .3s ease-out;
+}
+
+.deleteBtn:hover {
+    transform: translate(0, -1px);
+    box-shadow: 0 0 10px rgb(0, 105, 251)
 }
