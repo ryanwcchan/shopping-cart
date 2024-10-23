@@ -7,8 +7,14 @@
     min-width: 80%;
 }
 
+.cartContainer:empty {
+    display: none;
+}
+
 .cartInfo {
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 0;
+    height: 100%;
+    max-height: max-content;
 }
 
 .wrapper {
@@ -34,9 +40,5 @@
         justify-content: center;
         padding-top: 0;
         box-sizing: border-box;
-    }
-
-    .deleteBtn {
-
     }
 }

@@ -6,8 +6,6 @@
     background-color: brown;
     border-radius: 0.5rem;
     padding: 1rem 1.5rem;
-    /* width: 100%;
-    max-width: 100%; */
     box-sizing: border-box;
     height: 8rem;
 }
@@ -15,11 +13,11 @@
 .productName {
     width: 70%;
     height: 2rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     border-radius: 0.5rem;
     background-color: white;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
     overflow: scroll;
@@ -49,11 +47,11 @@
 }
 
 .qty {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .qtyDisplay {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border-radius: 0.5rem;
     background-color: #f7f1d2;
     padding: 0 1rem 0 1rem;
@@ -90,4 +88,80 @@
 
 .button:active {
     transform: translate(0, 1px);
+}
+
+.buttonWrapper {
+    display: flex;
+    gap: 2rem;
+}
+
+.deleteBtn i {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .quantity {
+        gap: 0.5rem;
+    }
+
+    .itemContainer {
+        gap: 1rem;
+    }
+
+    .buttonWrapper {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .buttonWrapper {
+        flex-direction: column;
+    }
+
+    .quantity {
+        padding: 0.5rem 1rem;
+    }
+
+    .deleteBtn {
+        padding: 0.5rem 1rem;
+    }
+
+    .productImg {
+        width: 4rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .productName {
+        font-size: 1rem;
+    }
+
+    .productImg {
+        display: none;
+    }
+
+    .deleteBtn {
+        he: min-content;
+        padding: 0.5rem;
+    }
+
+    .deleteBtn i {
+        display: inline-block;
+    }
+
+    .deleteText {
+        display: none;
+    }
+
+    .buttonWrapper {
+        flex-direction: row;
+    }
+
+    .qty {
+        display: none;
+    }
+
+    .itemContainer {
+        height: 6rem;
+    }
 }
