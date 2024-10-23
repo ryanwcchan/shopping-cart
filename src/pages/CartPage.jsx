@@ -22,7 +22,6 @@ export default function CartPage() {
 
   return (
     <div className={style.wrapper}>
-      
       <div className={style.cartContainer}>
         {cartData.map((item) => {
           return (

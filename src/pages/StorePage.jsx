@@ -6,7 +6,6 @@ import { useOutletContext } from "react-router-dom"
 
 export default function StorePage() {
   const { updateCartData } = useOutletContext();
-
   const [storeData, setStoreData] = useState([])
   const navigate = useNavigate()
 

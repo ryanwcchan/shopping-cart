@@ -6,23 +6,31 @@
     background-color: brown;
     border-radius: 0.5rem;
     padding: 1rem 1.5rem;
-    width: 100%;
-    max-width: 100%;
+    /* width: 100%;
+    max-width: 100%; */
     box-sizing: border-box;
+    height: 8rem;
 }
 
 .productName {
     width: 70%;
+    height: 2rem;
     font-size: 1.2rem;
     font-weight: bold;
     border-radius: 0.5rem;
     background-color: white;
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    overflow: scroll;
+    white-space: nowrap;
 }
 
 .productImg {
-    width: 4rem;
-    height: auto;
+    width: 8rem;
+    height: 4rem;
+    overflow: hidden;
+    object-fit: scale-down;
     border-radius: 0.5rem;
     padding: 0.5rem;
     background-color: white;
@@ -33,10 +41,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1.2rem;
     background-color: white;
     border-radius: 0.5rem;
-    padding: 0.7rem 1.5rem;
+    padding: 0.7rem 1rem;
     box-sizing: border-box;
 }
 

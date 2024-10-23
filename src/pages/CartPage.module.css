@@ -2,11 +2,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin: 2rem;
     gap: 1rem;
-    max-width: 1000px;
-    width: 100%;
+    min-width: 80%;
 }
 
 .cartInfo {
@@ -21,4 +19,24 @@
 .totalPrice {
     font-weight: bold;
     font-size: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .cartInfo {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        justify-content: center;
+        padding-top: 0;
+        box-sizing: border-box;
+    }
+
+    .deleteBtn {
+
+    }
 }
