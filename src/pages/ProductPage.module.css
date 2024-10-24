@@ -101,7 +101,7 @@ body {
 
 .quantityWrapper {
     user-select: none;
-    padding: 1rem 2rem;
+    padding: 0.7rem 1rem;
     background-color: white;
     border-radius: 0.5rem;
     color: brown;

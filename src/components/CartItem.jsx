@@ -1,10 +1,13 @@
 import style from './CartItem.module.css'
+import { useOutletContext } from 'react-router-dom'
 
 export default function CartItem({ productName, productId, quantity, productImg, deleteCartItem, incrementQuantity, decreaseQuantity }) {
+  const { handleProductClick } = useOutletContext()
+  
   return (
     <div className={style.itemContainer}>
-      <img className={style.productImg} src={productImg} alt="" />
-      <p className={style.productName}>{productName}</p>
+      <img onClick={() => handleProductClick(productId)} className={style.productImg} src={productImg} alt="" />
+      <p onClick={() => handleProductClick(productId)} className={style.productName}>{productName}</p>
       <div className={style.buttonWrapper}>
         <div className={style.quantity}>
           <span className={style.qty}>Qty:</span>

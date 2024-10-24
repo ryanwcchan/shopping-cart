@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
 import ProductCard from "../components/ProductCard"
 import style from './StorePage.module.css'
 import { useOutletContext } from "react-router-dom"
 
 export default function StorePage() {
-  const { updateCartData } = useOutletContext();
+  const { updateCartData, handleProductClick } = useOutletContext();
   const [storeData, setStoreData] = useState([])
-  const navigate = useNavigate()
 
   useEffect(() => {
     async function fetchStoreData() {
@@ -33,10 +31,6 @@ export default function StorePage() {
 
     fetchStoreData()
   }, [])
-
-  function handleProductClick(id) {
-    navigate(`/store/${id}`)
-  }
 
   return (
     <div className={style.productContainer}>

@@ -2,10 +2,16 @@ import { Outlet } from "react-router-dom"
 import Header from "./components/Header"
 import style from '../src/Root.module.css'
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 export default function Root() {
   const [cartData, setCartData] = useState([])
   const [cartCounter, setCartCounter] = useState(0)
+  const navigate = useNavigate()
+
+  function handleProductClick(id) {
+    navigate(`/store/${id}`)
+  }
 
   function emptyCart() {
     setCartData([])
@@ -90,7 +96,8 @@ export default function Root() {
                 updateCartData, 
                 deleteCartItem,
                 incrementQuantity, 
-                decreaseQuantity 
+                decreaseQuantity,
+                handleProductClick 
               }}
             />
         </div>
