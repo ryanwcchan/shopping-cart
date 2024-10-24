@@ -5,6 +5,7 @@ import BackButton from "../components/BackButton"
 import QuantityButtons from "../components/QuantityButtons"
 import AddToCartButton from "../components/AddToCartButton"
 import { useOutletContext } from "react-router-dom"
+import LoadingIcon from "../components/LoadingIcon"
 
 export default function ProductPage() {
   const { productId } = useParams()
@@ -31,7 +32,7 @@ export default function ProductPage() {
   }, [productId])
 
   if (!product) {
-    return <div>Loading...</div>
+    return <div><LoadingIcon /></div>
   }
 
   return (

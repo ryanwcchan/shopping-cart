@@ -22,6 +22,10 @@ export default function CartPage() {
 
   return (
     <div className={style.wrapper}>
+      <div className={style.cartInfo}>
+        <button onClick={emptyCart} className={cartStyle.deleteBtn}>Empty Cart</button>
+        <p className={style.totalPrice}>${totalPrice.toFixed(2)}</p>
+      </div>
       <div className={style.cartContainer}>
         {cartData.map((item) => {
           return (
@@ -37,10 +41,6 @@ export default function CartPage() {
             />
           )
         })}
-      </div>
-      <div className={style.cartInfo}>
-        <button onClick={emptyCart} className={cartStyle.deleteBtn}>Empty Cart</button>
-        <p className={style.totalPrice}>${totalPrice.toFixed(2)}</p>
       </div>
     </div>
   )
