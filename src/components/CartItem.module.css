@@ -12,14 +12,14 @@
 
 .productName {
     width: 70%;
-    height: 2rem;
+    /* height: 2rem; */
     font-size: 1.5rem;
     font-weight: bold;
     border-radius: 0.5rem;
     background-color: white;
     padding: 0.5rem 1rem;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     overflow: hidden;
     white-space: nowrap;
 }
@@ -158,9 +158,11 @@
     } */
 
     .productName {
-        height: 4rem;
+        height: 80%;
         overflow: auto;
         white-space: wrap;
+        /* padding-top: 1rem; */
+
     }
 
     .qty {
