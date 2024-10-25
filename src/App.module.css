@@ -9,6 +9,10 @@
     height: auto;
 }
 
+.imgContainer h1 {
+    font-size: 2rem;
+}
+
 .container h1 {
     position: absolute;
     padding: 2rem;
@@ -16,4 +20,22 @@
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     margin: 1rem;
+    font-size: 2rem;
+}
+
+.title {
+    padding: 2rem;
+    margin: 0;
+    background-color: #1E3A8A;
+    color: white;
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    .container h1 {
+        position: relative;
+        margin: 0;
+        border-radius: 0;
+        background-color: black;
+    }
 }
