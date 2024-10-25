@@ -2,8 +2,9 @@ import { useState } from 'react'
 import style from './ProductCard.module.css'
 import QuantityButtons from './QuantityButtons'
 import AddToCartButton from './AddToCartButton'
+import LoadingIcon from '../components/LoadingIcon'
 
-export default function ProductCard({ productId, productName, price, image, onClick, updateCartData }) {
+export default function ProductCard({ productId, productName, price, image, onClick, updateCartData, loading }) {
   const [quantity, setQuantity] = useState(1)
 
   function handleAddQuantity() {
@@ -14,6 +15,10 @@ export default function ProductCard({ productId, productName, price, image, onCl
     if (quantity > 0) {
         setQuantity(prevQuantity => prevQuantity - 1)
     }
+  }
+
+  if (loading) {
+    return <div className={style.loadingDiv}><LoadingIcon /></div>
   }
 
   return (

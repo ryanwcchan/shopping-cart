@@ -6,30 +6,43 @@ import { useOutletContext } from "react-router-dom"
 export default function StorePage() {
   const { updateCartData, handleProductClick } = useOutletContext();
   const [storeData, setStoreData] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    async function fetchStoreData() {
-      const localKey = 'fake-store-data'
-  
+    async function fetchStoreData(apiUrl, localKey) { 
       if (localStorage.getItem(localKey)) {
         const storedData = JSON.parse(localStorage.getItem(localKey))
-        setStoreData(storedData)
+
+        const normalizeData = storedData.map(product => ({
+          ...product,
+          image: product.image || product.images[0]
+        }))
+
+        setStoreData(normalizeData)
+        setLoading(false)
         console.log('Fetched data from cache')
         return
       }
   
       try {
-        const response = await fetch('https://fakestoreapi.com/products')
+        const response = await fetch(apiUrl)
         const data = await response.json()
-        localStorage.setItem(localKey, JSON.stringify(data))
-        setStoreData(data)
+
+        const normalizeData = data.map(product => ({
+          ...product,
+          image: product.image || product.images[0]
+        }))
+
+        localStorage.setItem(localKey, JSON.stringify(normalizeData))
+        setStoreData(normalizeData)
+        setLoading(false)
         console.log(data)
       } catch (err) {
         console.error(err)
       }
     }
 
-    fetchStoreData()
+    fetchStoreData('https://fakestoreapi.com/products', 'fake-store-data')
   }, [])
 
   return (
@@ -43,6 +56,7 @@ export default function StorePage() {
           image={product.image}
           onClick={() => handleProductClick(product.id)}
           updateCartData={updateCartData}
+          loading={loading}
         />
       ])}
     </div>
