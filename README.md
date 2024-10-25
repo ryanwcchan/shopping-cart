@@ -4,6 +4,9 @@
 
 This shopping cart application is built using React and React Router, allowing users to browse products, add them to a cart, and view detailed product information. The project showcases essential functionalities such as routing, state management, and responsive design.
 
+## Fake Store API
+In this project, product data is sourced from the Fake Store API. This API provides a variety of fake products, including electronics, clothing, and accessories, which are useful for simulating an e-commerce experience.
+
 ## Features
 
 - **Product Browsing**: Users can view a list of available products.
