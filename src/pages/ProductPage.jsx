@@ -40,7 +40,7 @@ export default function ProductPage() {
 
   return (
     <div className={styles.pageContainer}>
-      <div>
+      <div className={styles.wrapper}>
         <BackButton />
         <div className={styles.container}>
           <div className={styles.imgContainer}>

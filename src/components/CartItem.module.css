@@ -141,7 +141,7 @@
     }
 
     .deleteBtn {
-        he: min-content;
+        height: min-content;
         padding: 0.5rem;
     }
 
@@ -153,8 +153,14 @@
         display: none;
     }
 
-    .buttonWrapper {
+    /* .buttonWrapper {
         flex-direction: row;
+    } */
+
+    .productName {
+        height: 4rem;
+        overflow: auto;
+        white-space: wrap;
     }
 
     .qty {
@@ -162,6 +168,6 @@
     }
 
     .itemContainer {
-        height: 6rem;
+        height: 8rem
     }
 }
