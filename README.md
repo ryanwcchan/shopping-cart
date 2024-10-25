@@ -1,8 +1,22 @@
-# React + Vite
+# Shopping Cart Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This shopping cart application is built using React and React Router, allowing users to browse products, add them to a cart, and view detailed product information. The project showcases essential functionalities such as routing, state management, and responsive design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Product Browsing**: Users can view a list of available products.
+- **Detailed Product View**: Clicking on a product navigates to a detailed page with additional information.
+- **Shopping Cart**: Users can add items to their cart and manage quantities.
+- **Responsive Design**: The application is designed to be user-friendly on both desktop and mobile devices.
+
+## Technologies Used
+
+- **React**: JavaScript library for building user interfaces.
+- **React Router**: For handling navigation and routing within the application.
+- **CSS Modules**: For styling components with scoped styles.
+- **JavaScript**: For implementing application logic.
+
+## Live Preview
+https://shopping-cart-ashen-three.vercel.app/
