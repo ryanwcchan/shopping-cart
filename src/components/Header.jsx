@@ -17,7 +17,9 @@ export default function Header({ cartCounter }) {
 
         {/* Hamburger Icon */}
         <button className={styles.hamburger} onClick={toggleMenu}>
-          <i className='fa-solid fa-bars'></i>
+          <i className='fa-solid fa-bars'>
+          <span className={styles.cartBadge}>{cartCounter}</span>
+          </i>
         </button>
 
         <nav className={`${styles.headerNav} ${isMenuOpen ? styles.open : ''}`}>

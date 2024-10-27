@@ -10,7 +10,7 @@ export default function CartPage() {
 
   useEffect(() => {
     updateTotalPrice(cartData)
-  }, [cartData])
+  })
 
   function calculateTotal(items) {
     return items.reduce((total, item) => total + item.price * item.quantity, 0)

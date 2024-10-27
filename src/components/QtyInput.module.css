@@ -1,0 +1,10 @@
+.input {
+    width: 1.5rem;
+    background: none;
+    border: none;
+    text-align: center;
+    font-size: 1.2rem;
+    /* outline: none; */
+    display: flex;
+    flex: 1;
+}
