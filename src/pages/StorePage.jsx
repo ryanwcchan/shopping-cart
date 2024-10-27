@@ -47,7 +47,7 @@ export default function StorePage() {
 
   return (
     <div className={style.productContainer}>
-      {storeData.map((product) => [
+      {storeData.map((product) => 
         <ProductCard 
           key={product.id}
           productId={product.id}
@@ -58,7 +58,7 @@ export default function StorePage() {
           updateCartData={updateCartData}
           loading={loading}
         />
-      ])}
+      )}
     </div>
   )
 }

@@ -4,7 +4,7 @@ import QtyInput from './QtyInput'
 import { useState } from 'react'
 
 export default function CartItem({ productName, productId, quantity, productImg, deleteCartItem, incrementQuantity, decreaseQuantity }) {
-  const { handleProductClick } = useOutletContext()
+  const { handleProductClick, editQuantity } = useOutletContext()
 
   return (
     <div className={style.itemContainer}>
@@ -19,7 +19,11 @@ export default function CartItem({ productName, productId, quantity, productImg,
             <i onClick={() => decreaseQuantity(productId)} className={`${style.button} fa-solid fa-minus`}></i>
           )}
           <p className={style.qtyDisplay}>
-            {quantity}
+            <QtyInput 
+              quantity={quantity}
+              productId={productId}
+              editQuantity={editQuantity}
+            />
           </p>
           <i onClick={() => incrementQuantity(productId)} className={`${style.button} fa-solid fa-plus`}></i>
         </div>

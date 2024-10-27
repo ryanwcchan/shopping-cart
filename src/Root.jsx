@@ -14,6 +14,10 @@ export default function Root() {
     setCartCounter(totalQuantity)
   }, [cartData])
 
+  useEffect(() => {
+    console.log(cartData)
+  }, [cartData])
+
   function handleProductClick(id) {
     navigate(`/store/${id}`)
   }
@@ -83,13 +87,13 @@ export default function Root() {
     })
   }
 
-  // function editCartQuantity(productId, newQuantity) {
-  //   setCartData(prevCart => {
-  //     prevCart.map(item => 
-  //       item.productId === productId ? { ...item, quantity: newQuantity || item.quantity } : item
-  //     )
-  //   })
-  // }
+  function editQuantity(productId, newQuantity) {
+    setCartData(prevCart => {
+      return prevCart.map(item => 
+        item.productId === productId ? { ...item, quantity: newQuantity } : item
+      )
+    })
+  }
 
   return (
     <div className={style.body}>
@@ -106,6 +110,7 @@ export default function Root() {
                 incrementQuantity, 
                 decreaseQuantity,
                 handleProductClick,
+                editQuantity
               }}
             />
         </div>

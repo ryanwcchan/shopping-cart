@@ -1,33 +1,29 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import style from './QtyInput.module.css'
 
-export default function QtyInput({ quantity }) {
-  const [isEditing, setIsEditing] = useState(false)
-  const [prevQuantity, setPrevQuantity] = useState(quantity)
-  const [newQuantity, setNewQuantity] = useState(quantity)
+export default function QtyInput({ quantity, productId, editQuantity }) {
+  const [inputValue, setInputValue] = useState(quantity)
 
-  function turnOnEdit() {
-    setIsEditing(true)
-    setPrevQuantity(quantity)
-  }
+  useEffect(() => {
+    setInputValue(quantity)
+  }, [quantity])
 
-  function handleChange(e) {
-    let input = e.target.value
-
-    if (/^\d*$/.test(input)) {  // Only allows digits
-      console.log('Update quantity to', input)
-      setNewQuantity(input)
-    }
+  function handleChange(event) {
+    const input = event.target.value
+    setInputValue(input)
   }
 
   function handleBlur() {
-    setIsEditing(false)
-    // if(quantity === '') {
-    //   setQuantity(productId, prevQuantity)
-    // }
-    if(newQuantity === '') {
-      setNewQuantity(prevQuantity)
-    } 
+    if (inputValue === '') {
+      setInputValue(quantity)
+    } else {
+      const parsedValue = parseInt(inputValue, 10);
+      if (isNaN(parsedValue) || parsedValue < 1) {
+        setInputValue(quantity);
+      } else {
+        editQuantity(productId, parsedValue);
+      }
+    }
   }
 
   return (
@@ -35,11 +31,9 @@ export default function QtyInput({ quantity }) {
       <input
         className={style.input}
         type="text" 
-        value={newQuantity}
-        readOnly={!isEditing}
-        onClick={turnOnEdit}
-        onBlur={handleBlur}
+        value={inputValue}
         onChange={handleChange}
+        onBlur={handleBlur}
       ></input>
     </div>
   )
