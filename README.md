@@ -1,5 +1,8 @@
 # Shopping Cart Application
 
+## Live Preview
+https://shopping-cart-ashen-three.vercel.app/
+
 ## Overview
 
 This shopping cart application is built using React and React Router, allowing users to browse products, add them to a cart, and view detailed product information. The project showcases essential functionalities such as routing, state management, and responsive design.
@@ -22,6 +25,3 @@ https://fakestoreapi.com/
 - **React Router**: For handling navigation and routing within the application.
 - **CSS Modules**: For styling components with scoped styles.
 - **JavaScript**: For implementing application logic.
-
-## Live Preview
-https://shopping-cart-ashen-three.vercel.app/
