@@ -1,128 +1,128 @@
 .header {
-    background-color: brown;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99;
-    position: fixed;
-    width: 100%;
-    margin-top: -100px;
+  background-color: #0d1b2a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+  margin-top: -100px;
 }
 
 .headerText {
-    margin: 0;
-    padding: 2rem;
-    cursor: pointer;
-    font-size: 2rem;
+  margin: 0;
+  padding: 2rem;
+  cursor: pointer;
+  font-size: 2rem;
 }
 
 .headerText a {
-    text-decoration: none;
-    color: #f7f1d2;
+  text-decoration: none;
+  color: white;
 }
 
 .headerNav {
-    padding: 2rem;
-    display: flex;
+  padding: 2rem;
+  display: flex;
 }
 
 .navList {
-    margin: 0;
-    display: flex;
-    gap: 1.5rem;
-    margin-right: 1.5rem;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .navList li {
-    list-style: none;
-    display: flex;
-    align-items: center;
+  list-style: none;
+  display: flex;
+  align-items: center;
 }
 
 .link {
-    text-decoration: none;
-    color: #f7f1d2;
-    font-size: 1.5rem;
-    font-weight: bold;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .headerText a:hover,
 .headerText:hover,
 .link:hover {
-    color: lightgray;
+  color: lightgray;
 }
 
 .link i {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .cartBadge {
-    position: absolute;
-    font-size: 1rem;
-    background: red;
-    border-radius: 2rem;
-    padding: 0.2rem 0.4rem 0.2rem 0.4rem;
-    vertical-align: top;
-    margin-left: -10px;
-    margin-top: -7px;
+  position: absolute;
+  font-size: 1rem;
+  background: red;
+  border-radius: 2rem;
+  padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+  vertical-align: top;
+  margin-left: -10px;
+  margin-top: -7px;
 }
 
 .hamburger {
-    display: none;
-    font-size: 4rem;
-    background-color: transparent;
-    border: none;
-    color: #f7f1d2;
-    margin-top: -1.2rem;
+  display: none;
+  font-size: 4rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+  margin-top: -1.2rem;
 }
 
 @media (max-width: 768px) {
-    .headerNav {
-        /* display: none; */
-        visibility: hidden;
-        position: absolute;
-        top: 90px;
-        right: 0;
-        background-color: brown;
-        border-radius: 0 0 0.5rem 0.5rem;
-        z-index: 98;
-        transform: translateY(-100%);
-        opacity: 0;
-        transition: transform ease-in-out 0.3s, opacity 0.3s ease-in-out;
-    }
+  .headerNav {
+    /* display: none; */
+    visibility: hidden;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    background-color: brown;
+    border-radius: 0 0 0.5rem 0.5rem;
+    z-index: 98;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform ease-in-out 0.3s, opacity 0.3s ease-in-out;
+  }
 
-    .hamburger {
-        display: block;
-        position: absolute;
-        right: 2rem;
-        top: 2rem;
-        z-index: 99;
-    }
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    z-index: 99;
+  }
 
-    .headerNav.open {
-        display: flex;
-        flex-direction: column;
-        opacity: 1;
-        transition: transform ease-in-out 0.3s;
-        transform: translateY(10px);
-        visibility: visible;
-    }
+  .headerNav.open {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: transform ease-in-out 0.3s;
+    transform: translateY(10px);
+    visibility: visible;
+  }
 
-    .open {
-        display: flex;
-    }
+  .open {
+    display: flex;
+  }
 
-    .navList {
-        flex-direction: column;
-        gap: 4rem;
-        margin-bottom: 1rem;
-    }
+  .navList {
+    flex-direction: column;
+    gap: 4rem;
+    margin-bottom: 1rem;
+  }
 
-    .navList li {
-        border: 2px solid #f7f1d2;
-        border-radius: 0.5rem;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem 1.5rem;
-    }
+  .navList li {
+    border: 2px solid #f7f1d2;
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+  }
 }

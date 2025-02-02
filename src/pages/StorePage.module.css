@@ -1,9 +1,9 @@
 .productContainer {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2rem;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(237, 237, 237);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(237, 237, 237);
 }
