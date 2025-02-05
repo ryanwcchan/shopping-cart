@@ -1,38 +1,52 @@
-.itemContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  background-color: #0d1b2a;
-  border-radius: 0.5rem;
-  padding: 1rem 1.5rem;
-  box-sizing: border-box;
-  /* height: 8rem; */
-  max-width: 100rem;
-}
-
-.productName {
-  /* height: 100%; */
-  font-size: 2rem;
-  font-weight: bold;
-  border-radius: 0.5rem;
-  background-color: white;
-  padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  white-space: nowrap;
-  flex: 1;
-}
-
 .productImg {
   width: 8rem;
-  height: 4rem;
+  height: auto;
   overflow: hidden;
-  object-fit: scale-down;
   border-radius: 0.5rem;
   padding: 0.5rem;
   background-color: white;
+}
+
+.productName {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  flex-wrap: wrap;
+  background-color: white;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.nameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.price,
+.total {
+  font-size: 1.5rem;
+}
+
+.total {
+  font-weight: bold;
+}
+
+.productContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.priceContainer {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.productCell {
+  display: table-cell; /* Ensures it follows table row behavior */
+  vertical-align: middle; /* Aligns content in the center */
+  text-align: left;
 }
 
 .quantity {
@@ -40,10 +54,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.2rem;
+  gap: 0.5rem;
   background-color: white;
   border-radius: 0.5rem;
-  padding: 0.7rem 1rem;
   box-sizing: border-box;
 }
 
@@ -53,132 +66,40 @@
 
 .qtyDisplay {
   font-size: 1.2rem;
-  border-radius: 0.5rem;
-  background-color: #a2d2ff;
-  padding: 0 1rem 0 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #0d1b2a;
+  padding: 0.25rem 0.5rem;
   margin: 0;
 }
 
 .button {
   user-select: none;
-  font-size: 1.5rem;
-  color: #0d1b2a;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: #0d1b2a;
+  border: none;
+  border-radius: 0.25rem;
+  outline-color: transparent;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .deleteBtn {
-  margin: 0;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  background-color: transparent;
+  cursor: pointer;
   border: none;
   outline-color: transparent;
-  background-color: white;
-  color: #0d1b2a;
-  font-weight: bold;
+  color: #a2d2ff;
   font-size: 1.2rem;
-  transition: transform 0.3s ease-out;
-}
-
-.deleteBtn:hover,
-.button:hover {
-  transform: translate(0, -1px);
+  align-self: flex-start;
+  padding: 0;
 }
 
 .deleteBtn:hover {
-  /* box-shadow: 0 0 10px rgb(0, 105, 251) */
-  background-color: lightgray;
-}
-
-.button:active {
-  transform: translate(0, 1px);
-}
-
-.buttonWrapper {
-  display: flex;
-  gap: 2rem;
-}
-
-.deleteBtn i {
-  display: none;
-}
-
-@media (max-width: 1900px) {
-  .quantity {
-    gap: 0.5rem;
-  }
-
-  .itemContainer {
-    gap: 1rem;
-  }
-
-  .buttonWrapper {
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 1700px) {
-  .buttonWrapper {
-    flex-direction: column;
-  }
-
-  .quantity {
-    padding: 0.5rem 1rem;
-  }
-
-  .deleteBtn {
-    padding: 0.5rem 1rem;
-  }
-
-  .productImg {
-    width: 4rem;
-  }
-}
-
-@media (max-width: 1200px) {
-  .itemContainer {
-    flex-direction: column;
-  }
-
-  .productName {
-    font-size: 2rem;
-  }
-
-  .productImg {
-    display: none;
-  }
-
-  .deleteBtn {
-    height: min-content;
-    padding: 0.5rem;
-  }
-
-  .deleteBtn i {
-    display: inline-block;
-  }
-
-  .deleteText {
-    display: none;
-  }
-
-  .buttonWrapper {
-    flex-direction: row;
-  }
-
-  .productName {
-    overflow: auto;
-    white-space: wrap;
-    /* padding-top: 1rem; */
-  }
-
-  .qty {
-    display: none;
-  }
-
-  .itemContainer {
-    height: fit-content;
-    gap: 0.5rem;
-  }
-
-  .buttonWrapper {
-    padding-bottom: 1.5rem;
-  }
+  text-decoration: underline;
 }
