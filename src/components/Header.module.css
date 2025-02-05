@@ -6,7 +6,6 @@
   z-index: 99;
   position: fixed;
   width: 100%;
-  margin-top: -100px;
 }
 
 .headerText {
@@ -31,6 +30,7 @@
   display: flex;
   gap: 1.5rem;
   margin-right: 1.5rem;
+  padding-right: 2rem;
 }
 
 .navList li {
@@ -74,6 +74,7 @@
   border: none;
   color: white;
   margin-top: -1.2rem;
+  padding-right: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -83,7 +84,7 @@
     position: absolute;
     top: 90px;
     right: 0;
-    background-color: brown;
+    background-color: #0d1b2a;
     border-radius: 0 0 0.5rem 0.5rem;
     z-index: 98;
     transform: translateY(-100%);
