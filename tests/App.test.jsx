@@ -1,11 +1,12 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen } from "@testing-library/react";
+import { describe, it, expect } from "vitest";
 
-import App from '../src/App'
+import App from "../src/App";
 
-// describe('App', () => {
-//     it('renders hello world', () => {
-//         render(<App />);
+describe("App", () => {
+  it("renders Browse Top Quality Clothing", () => {
+    render(<App />);
 
-//         expect(screen.getByText(/Hello World/)).toBeInTheDocument();
-//     })
-// })
+    expect(screen.getByText(/Browse Top Quality Clothing/)).toBeInTheDocument();
+  });
+});

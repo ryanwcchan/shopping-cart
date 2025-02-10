@@ -1,21 +1,22 @@
-import { useState, useEffect } from "react"
-import style from './QtyInput.module.css'
+import { useState, useEffect } from "react";
+import style from "./QtyInput.module.css";
+import React from "react";
 
 export default function QtyInput({ quantity, productId, editQuantity }) {
-  const [inputValue, setInputValue] = useState(quantity)
+  const [inputValue, setInputValue] = useState(quantity);
 
   useEffect(() => {
-    setInputValue(quantity)
-  }, [quantity])
+    setInputValue(quantity);
+  }, [quantity]);
 
   function handleChange(event) {
-    const input = event.target.value
-    setInputValue(input)
+    const input = event.target.value;
+    setInputValue(input);
   }
 
   function handleBlur() {
-    if (inputValue === '') {
-      setInputValue(quantity)
+    if (inputValue === "") {
+      setInputValue(quantity);
     } else {
       const parsedValue = parseInt(inputValue, 10);
       if (isNaN(parsedValue) || parsedValue < 1) {
@@ -30,11 +31,11 @@ export default function QtyInput({ quantity, productId, editQuantity }) {
     <div className={style.container}>
       <input
         className={style.input}
-        type="text" 
+        type="text"
         value={inputValue}
         onChange={handleChange}
         onBlur={handleBlur}
       ></input>
     </div>
-  )
+  );
 }
