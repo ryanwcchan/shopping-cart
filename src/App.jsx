@@ -1,4 +1,5 @@
 import style from "../src/App.module.css";
+import React from "react";
 
 function App() {
   return (

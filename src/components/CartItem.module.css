@@ -1,3 +1,29 @@
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem;
+  background-color: white;
+}
+
+.productContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  align-self: flex-start;
+}
+
+.quantityPriceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 .productImg {
   width: 8rem;
   height: auto;
@@ -41,12 +67,6 @@
 .priceContainer {
   vertical-align: middle;
   text-align: center;
-}
-
-.productCell {
-  display: table-cell; /* Ensures it follows table row behavior */
-  vertical-align: middle; /* Aligns content in the center */
-  text-align: left;
 }
 
 .quantity {
@@ -102,4 +122,12 @@
 
 .deleteBtn:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }

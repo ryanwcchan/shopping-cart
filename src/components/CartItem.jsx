@@ -1,6 +1,7 @@
 import style from "./CartItem.module.css";
 import { useOutletContext } from "react-router-dom";
 import QtyInput from "./QtyInput";
+import React from "react";
 
 export default function CartItem({
   productName,
@@ -14,40 +15,36 @@ export default function CartItem({
 }) {
   const { handleProductClick, editQuantity } = useOutletContext();
 
-  return (
-    <tr key={productId}>
-      {/* Product column (Image and Name) */}
-      <tr className={style.productCell}>
-        <td>
-          <div>
-            <img
-              onClick={() => handleProductClick(productId)}
-              className={style.productImg}
-              src={productImg}
-              alt="Product image"
-            />
-          </div>
-        </td>
-        <td>
-          <div className={style.nameContainer}>
-            <p
-              onClick={() => handleProductClick(productId)}
-              className={style.productName}
-            >
-              {productName}
-            </p>
-            <button
-              className={style.deleteBtn}
-              onClick={() => deleteCartItem(productId)}
-            >
-              Remove
-            </button>
-          </div>
-        </td>
-      </tr>
+  console.log("decreaseQuantity:", decreaseQuantity);
 
-      {/* Quantity column */}
-      <td className={style.priceContainer}>
+  return (
+    <div key={productId} className={style.container}>
+      {/* Product column (Image and Name) */}
+      <div className={style.productContainer}>
+        <img
+          onClick={() => handleProductClick(productId)}
+          className={style.productImg}
+          src={productImg}
+          alt="Product image"
+        />
+        <div className={style.nameContainer}>
+          <p
+            onClick={() => handleProductClick(productId)}
+            className={style.productName}
+          >
+            {productName}
+          </p>
+          <button
+            className={style.deleteBtn}
+            onClick={() => deleteCartItem(productId)}
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+
+      <div className={style.quantityPriceContainer}>
+        {/* Quantity column */}
         <div className={style.buttonWrapper}>
           <div className={style.quantity}>
             <button
@@ -55,30 +52,28 @@ export default function CartItem({
               className={`${style.button} fa-solid fa-minus`}
               disabled={quantity === 1}
             ></button>
-            <p className={style.qtyDisplay}>
+            <span className={style.qtyDisplay}>
               <QtyInput
                 quantity={quantity}
                 productId={productId}
                 editQuantity={editQuantity}
               />
-            </p>
+            </span>
             <button
               onClick={() => incrementQuantity(productId)}
               className={`${style.button} fa-solid fa-plus`}
             ></button>
           </div>
         </div>
-      </td>
-
-      {/* Price column */}
-      <td>
-        <p className={style.price}>${price}</p>
-      </td>
-
-      {/* Total column */}
-      <td>
-        <p className={style.total}>${price * quantity}</p>
-      </td>
-    </tr>
+        {/* Price column */}
+        <div>
+          <p className={style.price}>${price}</p>
+        </div>
+        {/* Total column */}
+        <div>
+          <p className={style.total}>${(price * quantity).toFixed(2)}</p>
+        </div>
+      </div>
+    </div>
   );
 }

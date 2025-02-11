@@ -6,4 +6,5 @@
 .outletContainer {
   padding-top: 100px;
   min-height: 100vh;
+  min-width: 100%;
 }

@@ -1,12 +1,34 @@
-.cartTableContainer th,
-.cartTableContainer td {
-  padding: 1rem;
-  text-align: center;
+.cartGridContainer {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  width: 100%;
 }
 
-.cartTableContainer th {
+.cartGridHeader {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  text-align: center;
   font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem;
   background-color: burlywood;
+}
+
+.cartItemsGrid {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+
+h3 {
+  margin: 0;
+}
+
+.quantityPriceTotal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .cartInfo {
@@ -22,14 +44,9 @@
   font-size: 1.2rem;
 }
 
-.cartTableContainer {
-  flex: 1;
-}
-
-.cartTableContainer {
+.cartGridContainer {
   border: 4px solid burlywood;
   border-radius: 0.5rem;
-  overflow: hidden;
 }
 
 .wrapper {
@@ -46,12 +63,6 @@
   flex: 1;
 }
 
-.cartTable {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: white;
-}
-
 .orderSummary {
   border: 4px solid burlywood;
   border-radius: 0.5rem;
@@ -65,4 +76,26 @@
   background-color: burlywood;
   padding: 1rem;
   margin: 0;
+}
+
+@media screen and (max-width: 1450px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .orderSummary {
+    align-self: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .totalHeader,
+  .priceHeader,
+  .quantityHeader {
+    display: none;
+  }
+
+  .cartGridHeader {
+    grid-template-columns: 1fr;
+  }
 }

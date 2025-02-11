@@ -15,48 +15,51 @@ export default function CartPage() {
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    updateTotalPrice(cartData);
-  });
+    setTotalPrice(calculateTotal(cartData));
+  }, [cartData]);
 
   function calculateTotal(items) {
     return items.reduce((total, item) => total + item.price * item.quantity, 0);
   }
 
-  function updateTotalPrice() {
-    setTotalPrice(calculateTotal(cartData));
-  }
-
   return (
     <div className={style.wrapper}>
       <div className={style.container}>
-        <div className={style.cartTableContainer}>
-          <table className={style.cartTable}>
-            <thead>
-              <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cartData.map((item) => {
-                return (
-                  <CartItem
-                    key={item.productId}
-                    productId={item.productId}
-                    productImg={item.image}
-                    productName={item.productName}
-                    quantity={item.quantity}
-                    deleteCartItem={deleteCartItem}
-                    incrementQuantity={incrementQuantity}
-                    decreaseQuantity={decreaseQuantity}
-                    price={item.price}
-                  />
-                );
-              })}
-            </tbody>
-          </table>
+        <div className={style.cartGridContainer}>
+          <div className={style.cartGridHeader}>
+            <div>
+              <h3 className={style.productsHeader}>Products</h3>
+            </div>
+
+            <div className={style.quantityPriceTotal}>
+              <div>
+                <h3 className={style.quantityHeader}>Quantity</h3>
+              </div>
+              <div>
+                <h3 className={style.priceHeader}>Price</h3>
+              </div>
+              <div>
+                <h3 className={style.totalHeader}>Total</h3>
+              </div>
+            </div>
+          </div>
+          <div className={style.cartItemsGrid}>
+            {cartData.map((item) => {
+              return (
+                <CartItem
+                  key={item.productId}
+                  productId={item.productId}
+                  productImg={item.image}
+                  productName={item.productName}
+                  quantity={item.quantity}
+                  deleteCartItem={deleteCartItem}
+                  incrementQuantity={incrementQuantity}
+                  decreaseQuantity={decreaseQuantity}
+                  price={item.price}
+                />
+              );
+            })}
+          </div>
         </div>
         {/* Order Summary */}
         <div className={style.orderSummary}>
