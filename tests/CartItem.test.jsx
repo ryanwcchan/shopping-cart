@@ -43,7 +43,7 @@ describe("Cart Item", () => {
         productImg={product.image}
         deleteCartItem={mockDeleteItem}
         incrementQuantity={mockIncreaseQuantity}
-        decrementQuantity={mockDecreaseQuantity}
+        decreaseQuantity={mockDecreaseQuantity}
         price={product.price}
       />
     );
@@ -60,7 +60,7 @@ describe("Cart Item", () => {
         productImg={product.image}
         deleteCartItem={mockDeleteItem}
         incrementQuantity={mockIncreaseQuantity}
-        decrementQuantity={mockDecreaseQuantity}
+        decreaseQuantity={mockDecreaseQuantity}
         price={product.price}
       />
     );
@@ -78,7 +78,7 @@ describe("Cart Item", () => {
         productImg={product.image}
         deleteCartItem={mockDeleteItem}
         incrementQuantity={mockIncreaseQuantity}
-        decrementQuantity={mockDecreaseQuantity}
+        decreaseQuantity={mockDecreaseQuantity}
         price={product.price}
       />
     );
@@ -99,7 +99,7 @@ describe("Cart Item", () => {
         productImg={product.image}
         deleteCartItem={mockDeleteItem}
         incrementQuantity={mockIncreaseQuantity}
-        decrementQuantity={mockDecreaseQuantity}
+        decreaseQuantity={mockDecreaseQuantity}
         price={product.price}
       />
     );
