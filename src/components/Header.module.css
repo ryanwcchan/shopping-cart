@@ -6,15 +6,14 @@
   z-index: 99;
   position: fixed;
   width: 100%;
+  padding: 1rem;
 }
 
 .headerText {
   margin: 0;
-  padding: 2rem;
   cursor: pointer;
+  padding: 1rem;
   font-size: 2rem;
-  text-wrap: wrap;
-  word-break: break-all;
 }
 
 .headerText a {
@@ -23,16 +22,14 @@
 }
 
 .headerNav {
-  padding: 2rem;
-  display: flex;
+  padding-right: 2rem;
 }
 
 .navList {
   margin: 0;
   display: flex;
   gap: 1.5rem;
-  margin-right: 1.5rem;
-  padding-right: 2rem;
+  padding: 1rem;
 }
 
 .navList li {
@@ -84,14 +81,15 @@
     /* display: none; */
     visibility: hidden;
     position: absolute;
-    top: 90px;
-    right: 0;
+    top: 80px;
+    left: 0;
     background-color: #0d1b2a;
     border-radius: 0 0 0.5rem 0.5rem;
     z-index: 98;
     transform: translateY(-100%);
     opacity: 0;
     transition: transform ease-in-out 0.3s, opacity 0.3s ease-in-out;
+    width: 100%;
   }
 
   .hamburger {
@@ -113,19 +111,29 @@
 
   .open {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .navList {
     flex-direction: column;
     gap: 4rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
+  }
+
+  .open .navList li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .navList li {
     border: 2px solid #f7f1d2;
     border-radius: 0.5rem;
-    align-items: center;
-    justify-content: center;
     padding: 1rem 1.5rem;
+  }
+
+  .headerText {
+    font-size: 1.5rem;
   }
 }

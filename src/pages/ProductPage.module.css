@@ -12,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 1rem;
 }
 
 .wrapper {
@@ -128,5 +129,19 @@ body {
   .infoContainer {
     margin-left: 0;
     margin-top: -1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    font-size: 1.5rem;
+  }
+
+  .imgContainer {
+    padding: 2rem;
+  }
+
+  .infoContainer {
+    padding: 2rem;
   }
 }
