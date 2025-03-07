@@ -55,6 +55,10 @@
   font-size: 1.5rem;
 }
 
+.price {
+  font-weight: normal;
+}
+
 .total {
   font-weight: bold;
 }

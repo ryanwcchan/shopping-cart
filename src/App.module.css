@@ -1,14 +1,16 @@
 .imgContainer {
-  flex: 1;
+  background-color: #0d1b2a;
+  width: 100%;
+  overflow-x: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0d1b2a;
-  width: 100%;
+  align-self: center;
 }
 
 .imgContainer img {
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 }
 
 .imgContainer h1 {
